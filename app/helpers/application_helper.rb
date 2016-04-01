@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def full_title(page_title)
-    base_title = "図書館"
+    base_title = "王立魔法図書館"
     if page_title.empty?
       base_title
     else
