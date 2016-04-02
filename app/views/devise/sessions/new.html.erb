@@ -2,12 +2,13 @@
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
-    <%= f.label :email, "电子邮箱" %><br />
+    <%= f.label :email, "电子邮箱" %>
     <%= f.email_field :email, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :password, "密码" %><br />
+    <%= f.label :password, "密码" %>
+    <%= link_to "（忘记密码？）", new_user_password_path %>
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 

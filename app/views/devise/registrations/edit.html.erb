@@ -1,14 +1,10 @@
 <h1 class="page-header">修改用户信息</h1>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <% unless devise_error_messages!.empty? %>
-    <div class="alert alert-danger">
-      <%= devise_error_messages! %>
-    </div>
-  <% end %>
+  <%= render 'devise/shared/error' %>
 
   <div class="field">
-    <%= f.label :email, "电子邮箱" %><br />
+    <%= f.label :email, "电子邮箱" %>
     <%= f.email_field :email, autofocus: true %>
   </div>
 
@@ -17,17 +13,17 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password, "新密码" %>（留空则不修改）<br />
+    <%= f.label :password, "新密码" %>（留空则不修改）
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation, "确认密码" %><br />
+    <%= f.label :password_confirmation, "确认密码" %>
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :current_password, "当前密码" %>（需要当前密码才能保存修改）<br />
+    <%= f.label :current_password, "当前密码" %>（需要当前密码才能保存修改）
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
