@@ -12,6 +12,6 @@
 </head>
 <body>
   <%= render 'layouts/navbar' %>
-  <%= yield %>
+  <%= content_for?(:content) ? yield(:content) : yield %>
 </body>
 </html>

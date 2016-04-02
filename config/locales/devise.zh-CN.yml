@@ -35,7 +35,7 @@ zh-CN:
       updated: "您的密码已修改成功，您现在已登录。"
       updated_not_active: "您的密码已修改成功。"
     registrations:
-      destroyed: "再见！您的帐户已成功注销。我们希望很快可以再见到您。"
+      destroyed: "再见！您的帐户已成功注销。"
       signed_up: "欢迎您！您已注册成功。"
       signed_up_but_inactive: "您已注册，但尚未激活账号。"
       signed_up_but_locked: "您已注册，但账号被锁定了。"
@@ -44,8 +44,8 @@ zh-CN:
       updated: "帐号资料更新成功。"
     sessions:
       signed_in: "登录成功。"
-      signed_out: "退出成功。"
-      already_signed_out: "已经退出成功。"
+      signed_out: "登出成功。"
+      already_signed_out: "已经登出成功。"
     unlocks:
       send_instructions: "几分钟后，您将收到一封解锁帐号的邮件。"
       send_paranoid_instructions: "如果您的邮箱存在于我们的数据库中，您将收到一封解锁账号的邮件。"
@@ -58,5 +58,5 @@ zh-CN:
       not_found: "没有找到。"
       not_locked: "未锁定。"
       not_saved:
-        one: "因为 1 个错误导致保存失败："
-        other: "因为 %{count} 个错误导致保存失败："
+        one: "您的表单包含 1 个错误："
+        other: "您的表单包含 %{count} 个错误："

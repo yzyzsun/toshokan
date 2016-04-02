@@ -11,8 +11,15 @@
     </div>
     <div class="collapse navbar-collapse" id="navbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "设置" %></li>
-        <li><%= link_to "关于" %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to current_user.email %></li>
+          <li><%= link_to "修改信息", edit_user_registration_path %></li>
+          <li><%= link_to "登出", destroy_user_session_path, method: "delete" %></li>
+        <% else %>
+          <li><%= link_to "注册", new_user_registration_path %></li>
+          <li><%= link_to "登录", new_user_session_path  %></li>
+        <% end %>
+        <li><%= link_to "关于", about_path %></li>
       </ul>
     </div>
   </div>
