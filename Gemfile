@@ -24,6 +24,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'rails-i18n', '~> 4.0'
 gem 'bootstrap-sass', '~> 3.3'
 gem 'devise', '~> 3.5'
+gem 'slim-rails', '~> 3.0'
 
 group :development do
   # Use sqlite3 as the database for Active Record

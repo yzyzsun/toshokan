@@ -1,0 +1,8 @@
+- content_for :content do
+  = render 'layouts/alert'
+  .container
+    .row
+      .col-md-6.col-md-offset-3.devise-page
+        = yield
+  = render 'layouts/footer'
+= render template: 'layouts/application'

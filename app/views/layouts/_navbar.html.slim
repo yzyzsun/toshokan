@@ -1,0 +1,19 @@
+nav.navbar.navbar-default.navbar-fixed-top
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle.collapsed[data-toggle="collapse" data-target="#navbar" aria-expanded="false"]
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      = link_to "王立魔法図書館", root_path, class: "navbar-brand"
+    #navbar.collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-right
+        - if user_signed_in?
+          li = link_to current_user.email
+          li = link_to "修改信息", edit_user_registration_path
+          li = link_to "登出", destroy_user_session_path, method: "delete"
+        - else
+          li = link_to "注册", new_user_registration_path
+          li = link_to "登录", new_user_session_path
+        li = link_to "关于", about_path
