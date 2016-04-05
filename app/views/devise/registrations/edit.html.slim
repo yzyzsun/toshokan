@@ -9,6 +9,15 @@ h1.page-header 修改用户信息
       | 正在等待确认：
       = resource.unconfirmed_email
   .field
+    = f.label :sid, "学号"
+    = f.text_field :sid, class: "form-control"
+  .field
+    = f.label :name, "姓名"
+    = f.text_field :name, class: "form-control"
+  .field
+    = f.label :school_class, "班级"
+    = f.text_field :school_class, class: "form-control"
+  .field
     = f.label :password, "新密码"
     | （留空则不修改） 
     = f.password_field :password, autocomplete: "off", class: "form-control"

@@ -14,5 +14,14 @@ h1.page-header 注册
   .field
     = f.label :password_confirmation, "确认密码"
     = f.password_field :password_confirmation, autocomplete: "off", class: "form-control"
+  .field
+    = f.label :sid, "学号"
+    = f.text_field :sid, class: "form-control"
+  .field
+    = f.label :name, "姓名"
+    = f.text_field :name, class: "form-control"
+  .field
+    = f.label :school_class, "班级"
+    = f.text_field :school_class, class: "form-control"
   .actions
     = f.submit "注册", class: "btn btn-primary"
