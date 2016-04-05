@@ -18,13 +18,11 @@ gem 'jbuilder'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', group: :doc
 
-# Use ActiveModel has_secure_password
-gem 'bcrypt'
-
 gem 'rails-i18n'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'slim-rails'
+gem 'sprockets-es6'
 
 group :development do
   # Use sqlite3 as the database for Active Record
