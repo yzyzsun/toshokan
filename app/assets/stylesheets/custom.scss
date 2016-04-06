@@ -21,6 +21,10 @@
   font-size: 18px;
 }
 
+.btn-back {
+  margin-top: 10px;
+  width: 100%;
+}
 
 // forms
 
@@ -37,8 +41,8 @@ input, textarea, select, .uneditable-input {
   @include box_sizing;
 }
 
-input {
-  height: auto !important;
+textarea {
+  height: 160px !important;
 }
 
 #error_explanation ul {

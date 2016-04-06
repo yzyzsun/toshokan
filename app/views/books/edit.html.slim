@@ -1,8 +1,3 @@
-h1 Editing book
-
+h1.page-header 编辑图书
 == render 'form'
-
-= link_to 'Show', @book
-'|
-= link_to 'Back', books_path
-
+= link_to "返回", @book, class: "btn btn-default btn-back"
