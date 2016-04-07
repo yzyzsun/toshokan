@@ -24,6 +24,7 @@
         b 简介：
         = @book.introduction
       .book-button
-        = link_to "编辑", edit_book_path(@book), class: "btn btn-warning"
-        = link_to "删除", @book, data: { confirm: "确定删除？" }, method: "delete", class: "btn btn-danger"
+        - if current_user&.admin?
+          = link_to "编辑", edit_book_path(@book), class: "btn btn-warning"
+          = link_to "删除", @book, data: { confirm: "确定删除？" }, method: "delete", class: "btn btn-danger"
         = link_to "返回", root_path, class: "btn btn-default"

@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  before_action :admin_user, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   # GET /books
@@ -56,5 +57,9 @@ class BooksController < ApplicationController
     def book_params
       params.require(:book).permit(:isbn, :title, :author, :publisher, :publishing_date,
                                    :language, :image_url, :introduction)
+    end
+
+    def admin_user
+      redirect_to root_url, alert: "您没有管理员权限" unless current_user&.admin?
     end
 end
