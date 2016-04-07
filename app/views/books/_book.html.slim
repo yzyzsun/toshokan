@@ -1,0 +1,12 @@
+.col-sm-6.col-md-4
+  .thumbnail
+    = image_tag book.image_url, alt: book.title
+    .caption
+      h3 = book.title
+      p
+        b 作者：
+        = book.author
+        br
+        b 出版社：
+        = book.publisher
+      = link_to "查看详情", book, class: "btn btn-info"

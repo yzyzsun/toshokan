@@ -26,6 +26,25 @@
   width: 100%;
 }
 
+.thumbnail img {
+  max-height: 432px;
+}
+
+.book-cover {
+  width: 100%;
+}
+
+.book-profile {
+  margin-top: 30px;
+}
+
+.book-button {
+  margin-top: 30px;
+  .btn {
+    margin-right: 10px;
+  }
+}
+
 // forms
 
 @mixin box_sizing {
