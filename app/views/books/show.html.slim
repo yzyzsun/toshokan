@@ -1,3 +1,4 @@
+= render 'layouts/notice'
 .container
   h1.page-header.text-center = @book.title
   .row
@@ -10,6 +11,12 @@
       p
         b 出版社：
         = @book.publisher
+      p
+        b 出版时间：
+        = @book.publishing_date
+      p
+        b 语言：
+        = @book.language
       p
         b ISBN：
         = @book.isbn

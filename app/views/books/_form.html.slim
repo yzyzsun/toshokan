@@ -21,6 +21,14 @@
     = f.label :publisher, "出版社"
     = f.text_field :publisher, class: "form-control"
   .field
+    = f.label :publishing_date, "出版日期"
+    br
+    = f.date_select :publishing_date, class: "form-control",
+            use_month_numbers: true, start_year: 1970, end_year: Date.today.year
+    .field
+    = f.label :language, "语言"
+    = f.text_field :language, class: "form-control"
+  .field
     = f.label :image_url, "封面图片网址"
     = f.url_field :image_url, class: "form-control"
   .field
