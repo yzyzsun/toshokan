@@ -1,0 +1,18 @@
+.container
+  h1.page-header.text-center 用户列表
+  table.table
+    thead
+      tr
+        th #
+        th 姓名
+        th 班级
+        th 学号
+        th 电子邮箱
+    tbody
+      - @users.each do |user|
+        tr[class=("active" if user.admin?)]
+          th[scope="row"] = user.id
+          td = link_to user.name, user
+          td = user.school_class
+          td = user.sid
+          td = user.email

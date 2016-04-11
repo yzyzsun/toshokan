@@ -1,0 +1,24 @@
+h1.page-header 用户信息
+.row
+  .col-sm-4
+    a[href="http://gravatar.com" target="_blank" title="前往 Gravatar 修改头像"] = gravatar_for @user
+  .col-sm-8
+    p
+      b 姓名：
+      = @user.name
+    p
+      b 班级：
+      = @user.school_class
+    p
+      b 学号：
+      = @user.sid
+    p
+      b 电子邮箱：
+      = @user.email
+    - if current_user.admin?
+      p
+        b 最近登录时间：
+        = @user.current_sign_in_at.localtime
+      p
+        b 最近登录 IP：
+        = @user.current_sign_in_ip

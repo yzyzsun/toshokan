@@ -10,8 +10,9 @@ nav.navbar.navbar-default.navbar-fixed-top
     #navbar.collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
-          li = link_to current_user.email
+          li = link_to "欢迎！#{current_user.name}", current_user
           li = link_to "修改信息", edit_user_registration_path
+          li = link_to "用户列表", users_path
           li = link_to "登出", destroy_user_session_path, method: "delete"
         - else
           li = link_to "注册", new_user_registration_path
