@@ -10,7 +10,7 @@
         - if @book.category.nil?
           | 未分类
         - else
-          = @book.category.category
+          = link_to @book.category.category, @book.category
       p
         b 作者：
         = @book.author
