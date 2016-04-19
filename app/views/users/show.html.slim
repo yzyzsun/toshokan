@@ -18,7 +18,7 @@ h1.page-header 用户信息
     - if current_user.admin?
       p
         b 最近登录时间：
-        = @user.current_sign_in_at.localtime
+        = @user.current_sign_in_at
       p
         b 最近登录 IP：
         = @user.current_sign_in_ip
