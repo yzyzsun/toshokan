@@ -5,10 +5,14 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  protected
+  private
+
     def configure_permitted_parameters
       devise_parameter_sanitizer.for(:sign_up)        << :sid << :name << :school_class
       devise_parameter_sanitizer.for(:account_update) << :sid << :name << :school_class
     end
 
+    def admin_user
+      redirect_to root_url unless current_user&.admin?
+    end
 end

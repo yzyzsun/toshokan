@@ -63,8 +63,4 @@ class BooksController < ApplicationController
       params.require(:book).permit(:isbn, :title, :author, :publisher, :publishing_date,
                                    :category_id, :language, :image_url, :introduction)
     end
-
-    def admin_user
-      redirect_to root_url, alert: "您没有管理员权限" unless current_user&.admin?
-    end
 end
