@@ -2,16 +2,16 @@
   .row
     .col-sm-2.sidebar
       ul.nav.nav-sidebar
-        li.active = link_to "所有分类"
+        li = link_to "所有分类", root_path
         - @categories.each do |category|
-          li = link_to category.category, category
+          li[class=("active" if category == @category)]
+            = link_to category.category, category
     .col-sm-10.col-sm-offset-2.main
       = render 'layouts/notice'
       - if current_user&.admin?
         .text-right
-          = link_to "新增图书", new_book_path, class: "btn btn-primary"
-          = link_to "新增分类", new_category_path, class: "btn btn-default"
+          = link_to "删除分类", @category, data: { confirm: "确定删除？" }, method: "delete", class: "btn btn-danger"
       h1.page-header
         | 图书目录
-        small< 所有分类
+        small< = @category.category
       .row = render(@books) || "目前暂无图书"

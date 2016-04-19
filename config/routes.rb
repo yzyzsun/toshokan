@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:index, :show]
   resources :books, except: :index
+  resources :categories, except: [:index, :edit, :update]
 end

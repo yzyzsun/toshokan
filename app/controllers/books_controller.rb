@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   before_action :admin_user, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_book, only: [:show, :edit, :update, :destroy]
+  before_action :set_categories, only: [:index, :new, :edit]
 
   # GET /books
   def index
@@ -53,10 +54,14 @@ class BooksController < ApplicationController
       @book = Book.find(params[:id])
     end
 
+    def set_categories
+      @categories = Category.all
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
       params.require(:book).permit(:isbn, :title, :author, :publisher, :publishing_date,
-                                   :language, :image_url, :introduction)
+                                   :category_id, :language, :image_url, :introduction)
     end
 
     def admin_user

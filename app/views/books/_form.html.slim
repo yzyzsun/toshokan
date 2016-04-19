@@ -23,9 +23,12 @@
   .field
     = f.label :publishing_date, "出版日期"
     br
-    = f.date_select :publishing_date, class: "form-control",
-            use_month_numbers: true, start_year: 1970, end_year: Date.today.year
-    .field
+    = f.date_select :publishing_date, use_month_numbers: true, start_year: 1970, end_year: Date.today.year
+  .field
+    = f.label :category_id, "分类"
+    br
+    = f.select :category_id, @categories.collect { |x| [x.category, x.id] }, {}, class: "form-control"
+  .field
     = f.label :language, "语言"
     = f.text_field :language, class: "form-control"
   .field
@@ -35,4 +38,4 @@
     = f.label :introduction, "简介"
     = f.text_area :introduction, class: "form-control"
   .actions
-    = f.submit "保存", class: "btn btn-primary"
+    = f.submit "提交", class: "btn btn-primary"

@@ -6,6 +6,12 @@
       = image_tag @book.image_url, alt: @book.title, class: "book-cover"
     .col-sm-8.book-profile
       p
+        b 分类：
+        - if @book.category.nil?
+          | 未分类
+        - else
+          = @book.category.category
+      p
         b 作者：
         = @book.author
       p
