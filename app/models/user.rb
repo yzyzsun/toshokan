@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :books
+  has_many :books, -> { order "last_borrowed_at ASC" }
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
