@@ -34,3 +34,28 @@
           = link_to "编辑", edit_book_path(@book), class: "btn btn-warning"
           = link_to "删除", @book, data: { confirm: "确定删除？" }, method: "delete", class: "btn btn-danger"
         = link_to "返回", root_path, class: "btn btn-default"
+  - if current_user
+    table.table.book-stat
+      thead
+        tr
+          th 状态
+          - if @book.user.nil?
+            th 最近归还时间
+          - else
+            th 借阅人
+            th 借阅时间
+          th 借阅次数
+      tbody
+        tr
+          - if @book.user.nil?
+            td.success
+              i.fa.fa-check[aria-hidden="true"]
+              |  未借阅
+            td = @book.last_returned_at || "-"
+          - else
+            td.danger
+              i.fa.fa-close[aria-hidden="true"]
+              |  已借阅
+            td = link_to @book.user.name, @book.user
+            td = @book.last_borrowed_at || "-"
+          td = @book.borrow_count

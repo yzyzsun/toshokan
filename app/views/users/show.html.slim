@@ -22,3 +22,16 @@ h1.page-header 用户信息
       p
         b 最近登录 IP：
         = @user.current_sign_in_ip
+hr
+table.table
+  thead
+    tr
+      th #
+      th 借阅图书
+      th 借阅时间
+  tbody
+    - @user.books.each.with_index do |book, index|
+      tr
+        th = index + 1
+        td = link_to book.title, book
+        td = book.last_borrowed_at

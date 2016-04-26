@@ -1,5 +1,7 @@
 class Book < ActiveRecord::Base
   belongs_to :category
+  belongs_to :user
+
   validates :isbn, length: { is: 13 }
   validates :title, presence: true, length: { maximum: 100 }
   validates :author, presence: true, length: { maximum: 100 }

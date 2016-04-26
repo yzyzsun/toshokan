@@ -20,6 +20,7 @@ gem 'sdoc', group: :doc
 
 gem 'rails-i18n'
 gem 'bootstrap-sass'
+gem 'font-awesome-sass'
 gem 'devise'
 gem 'slim-rails'
 gem 'sprockets-es6'
