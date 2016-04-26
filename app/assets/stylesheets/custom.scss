@@ -10,6 +10,11 @@
   background-color: #f7f7f7;
 }
 
+.obfuscate {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+}
+
 .devise-page {
   h1 {
     text-align: center;
