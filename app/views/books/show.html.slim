@@ -30,6 +30,13 @@
         b 简介：
         = @book.introduction
       .book-button
+        - if current_user
+          - if @book.user.nil?
+            = link_to "借阅", borrow_book_path(@book), class: "btn btn-primary"
+          - elsif @book.user == current_user
+            = link_to "还书", return_book_path(@book), class: "btn btn-primary"
+          - else
+            = link_to "借阅", nil, class: "btn btn-primary disabled"
         - if current_user&.admin?
           = link_to "编辑", edit_book_path(@book), class: "btn btn-warning"
           = link_to "删除", @book, data: { confirm: "确定删除？" }, method: "delete", class: "btn btn-danger"

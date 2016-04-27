@@ -1,8 +1,8 @@
 h1.page-header 用户信息
 .row
-  .col-sm-4
+  .col-sm-5
     a[href="http://gravatar.com" target="_blank" title="前往 Gravatar 修改头像"] = gravatar_for @user
-  .col-sm-8
+  .col-sm-7
     p
       b 姓名：
       = @user.name
@@ -23,15 +23,18 @@ h1.page-header 用户信息
         b 最近登录 IP：
         = @user.current_sign_in_ip
 hr
-table.table
-  thead
-    tr
-      th #
-      th 借阅图书
-      th 借阅时间
-  tbody
-    - @user.books.each.with_index do |book, index|
+- if @user.books.empty?
+  .text-center 用户尚未借阅图书
+- else
+  table.table
+    thead
       tr
-        th = index + 1
-        td = link_to book.title, book
-        td = book.last_borrowed_at
+        th #
+        th 借阅图书
+        th 借阅时间
+    tbody
+      - @user.books.each.with_index do |book, index|
+        tr
+          th = index + 1
+          td = link_to book.title, book
+          td = book.last_borrowed_at

@@ -8,6 +8,7 @@
         th 班级
         th 学号
         th 电子邮箱
+        th 已借册数
     tbody
       - @users.each do |user|
         tr[class=("active" if user.admin?)]
@@ -16,3 +17,4 @@
           td = user.school_class
           td = user.sid
           td = user.email
+          td = user.books.size
