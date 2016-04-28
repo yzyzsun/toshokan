@@ -5,7 +5,7 @@ class BooksController < ApplicationController
 
   # GET /books
   def index
-    @books = Book.all
+    @books = Book.order("id ASC")
   end
 
   # GET /books/1
@@ -80,7 +80,7 @@ class BooksController < ApplicationController
     end
 
     def set_categories
-      @categories = Category.all
+      @categories = Category.order("id ASC")
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

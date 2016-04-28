@@ -4,8 +4,8 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1
   def show
-    @categories = Category.all
-    @books = @category.books
+    @categories = Category.order("id ASC")
+    @books = @category.books.order("id ASC")
   end
 
   # GET /categories/new

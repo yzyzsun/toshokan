@@ -6,7 +6,7 @@
 
 .footer {
   padding: 50px 15px;
-  margin-top: 50px;
+  margin-top: 100px;
   background-color: #f7f7f7;
 }
 
@@ -22,7 +22,12 @@
   img {
     display: block;
     margin: 0 auto;
+    max-width: 100%;
   }
+}
+
+img.gravatar {
+  margin-bottom: 30px;
 }
 
 .alert h2 {
@@ -35,11 +40,11 @@
 }
 
 .thumbnail img {
-  max-height: 432px;
+  max-height: 400px;
 }
 
 .book-cover {
-  width: 100%;
+  max-width: 100%;
 }
 
 .book-profile {

@@ -66,3 +66,4 @@
             td = link_to @book.user.name, @book.user
             td = @book.last_borrowed_at || "-"
           td = @book.borrow_count
+= render 'layouts/footer'
