@@ -15,4 +15,9 @@ module ApplicationHelper
     image_tag url, alt: user.name, class: "gravatar"
   end
 
+  def button_back
+    link_to "返回", request.referrer != request.original_url ? :back : root_path,
+            class: "btn btn-default btn-back"
+  end
+
 end
