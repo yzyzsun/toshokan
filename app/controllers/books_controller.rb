@@ -10,6 +10,7 @@ class BooksController < ApplicationController
 
   # GET /books/1
   def show
+    flash.now[:notice] = "借书请登录" if current_user.nil?
   end
 
   # GET /books/new
