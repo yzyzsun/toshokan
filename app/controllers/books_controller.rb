@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
   before_action :admin_user, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_book, only: [:show, :edit, :update, :destroy, :borrow, :return]
-  before_action :set_categories, only: [:index, :new, :edit]
+  before_action :set_categories, only: [:index, :new, :create, :edit, :update]
 
   # GET /books
   def index
